@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #728d81;
+  color: white;
+  margin: 0rem;
+  padding: 0rem;
+}
+
+header, main, footer {
+  max-width: 800px;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+nav {
+  background-color: black;
+  margin: 0rem;
+  padding: 0rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+nav a {
+  color: #cfe8e3;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  background-color: black;
+  margin: 1rem 0 1rem 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+h3 {
+    font-size: 1rem;
+}  
+
+p {
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+ul li,
+ol li {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+a {
+  color: #cfe8e3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem;
+  }
+  
+  .logo {
+    height: 100px;
+  }
+  
+  .menu-toggle {
+    font-size: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+/*こっから理解できてないcssの記述*/
+  .card-list {
+    display: flex;
+    gap: 1rem; /* カード間のスペース */
+    overflow-x: auto; /* 横スクロールもできるように */
+    padding: 1rem;
+  }
+  
+  .card {
+    background: white;
+    color: black;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+  }  
+  

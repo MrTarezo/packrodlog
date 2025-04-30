@@ -2,47 +2,59 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>釣竿の紹介</title>
+        <title>パックロッドログ</title>
         <meta name="description" content="パックロッドを日々ご紹介">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <h1>伝説の竿</h1>
-        <img src="images/fish1.jpeg" alt="竿" width="300">
-        <p>勇者アングラーが使用した伝説の竿</p>
-        <h2>特徴</h2>
-        <p>勇者しか扱えないと言われている</p>
-        <h3>釣り上げられた怪魚</h3>
-        <p>・伝説のマゴチ</p>
-        <img src="images/fish1.jpeg" alt="マゴチ" width="300">
-        <p>今すぐ<a href="https://www.google.com/">Google</a>で検索</p>
-        <ul>
-            <li>beach walker wedge</li>
-            <li>エコギア パワーシャッド</li>
-            <li>メジャークラフト</li>
-        </ul>
-        <ol>
-            <li>遠くにキャストする</li>
-            <li>糸ふけをとる</li>
-            <li>ボトムをとる</li>
-            <li>ゆっくり巻く</li>
-        </ol>
+        <header>
+            <div class="header-container">
+                <img src="images/logo_sample.png" alt="サイトロゴ" class="logo">
+                <p>最高のギアを求めて</p>
+                <button class="menu-toggle" aria-label="メニューを開く">☰</button><!-- aria-labelはオシャレ心 -->
+            </div>
+            <h1>ぱっくロッドLog</h1>
+            <nav>
+                <a href="index.html">トップ</a> |
+                <a href="reviews/">レビュー一覧</a> |
+            </nav>
+        </header>
 
-        <table border="1">
-            <tr>
-              <th colspan="2">ヘッダー1</th>
-            </tr>
-            <tr>
-              <td rowspan="2">行</td>
-              <td>セル1</td>
-            </tr>
-            <tr>
-              <td>セル2</td>
-            </tr>
-            <tr>
-              <td>セル3</td>
-              <td>セル4</td>
-            </tr>
-          </table>
+        <main>
+            <section class="card-list">
+                <div class="card">
+                    <a href="reviews/rod-guidepost-lhr56.html">
+                    <img src="images/website_sample.png" alt="記事1の画像です"></a>
+                    <h3>34 ガイドポスト LHR-56</h3>
+                    <p>アジング 本格4ピース</p>
+                </div>
+                  
+                <div class="card">
+                    <a href="reviews/rod-lateo-86mlb4.html">
+                    <img src="images/website_sample.png" alt="記事2の画像です"></a>
+                    <h3>DAIWA ラテオ 86mlb-4</h3>
+                    <p>シーバス ベイトの4ピース</p>
+                </div>
+                
+                <div class="card">
+                    <a href="reviews/rod-zoomsafari-464l.html">
+                    <img src="images/website_sample.png" alt="記事3の画像です"></a>
+                    <h3>Abu ZoomSafari 464l</h3>
+                    <p>ライトゲーム ベイトの4ピース</p>
+                </div>
+
+            </section>
+
+            <section>
+                <h2>おすすめ釣具</h2>
+                <a href="reviews/rod-lateo-86mlb4.html">これオススメ</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 ぱっくロッドLog</p>
+        </footer>
 
     </body>
 </html>
