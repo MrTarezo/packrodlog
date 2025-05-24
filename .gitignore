@@ -1,0 +1,8 @@
+# Mac固有
+.DS_Store
+
+# テンプレや下書きなどGitで管理しないもの
+templates/
+
+# 書きかけ記事は除外
+drafts/

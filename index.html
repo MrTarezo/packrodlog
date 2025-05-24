@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>パックロッドログ</title>
-        <meta name="description" content="パックロッドを日々ご紹介">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <title>パックロッドログ</title>
+    <meta name="description" content="パックロッドを日々ご紹介">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- gogole analytics-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ7DV2ZWX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GRJ7DV2ZWX');  
+    </script>
+  </head>
+
     <body>
         <header>
             <div class="header-container">
                 <img src="images/logo_sample.png" alt="サイトロゴ" class="logo">
                 <p>最高のギアを求めて</p>
                 <button><a href="about.html">サイト概要</a></button>
-                <button class="menu-toggle" aria-label="メニューを開く">☰</button><!-- aria-labelはオシャレ心 -->
+                <button class="menu-toggle" aria-label="メニューを開く">☰</button>
             </div>
             <h1>ぱっくロッドLog</h1>
             <nav>
@@ -23,42 +33,8 @@
         </header>
 
         <main>
-            <section class="card-list">
-                <div class="card">
-                    <a href="reviews/rod-guidepost-lhr56.html">
-                    <img src="images/34 ガイドポスト_ アジング用ロッド.png" alt="記事1の画像です"></a>
-                    <h3>34 ガイドポスト LHR-56</h3>
-                    <p>アジング 本格4ピース</p>
-                </div>
-                  
-                <div class="card">
-                    <a href="reviews/rod-lateo-86mlb4.html">
-                    <img src="images/website_sample.png" alt="記事2の画像です"></a>
-                    <h3>DAIWA ラテオ 86mlb-4</h3>
-                    <p>シーバス ベイトの4ピース</p>
-                </div>
-                
-                <div class="card">
-                    <a href="reviews/rod-zoomsafari-464l.html">
-                    <img src="images/website_sample.png" alt="記事3の画像です"></a>
-                    <h3>Abu ZoomSafari 464l</h3>
-                    <p>ライトゲーム ベイトの4ピース</p>
-                </div>
-
-                <div class="card">
-                    <a href="reviews/rod-zoomsafari-656m.html">
-                    <img src="images/website_sample.png" alt="記事4の画像です"></a>
-                    <h3>Abu ZoomSafari 656m</h3>
-                    <p>バス用 ベイトの4ピース</p>
-                </div>
-
-                <div class="card">
-                    <a href="reviews/rod-zoomsafari-464l.html">
-                    <img src="images/website_sample.png" alt="記事5の画像です"></a>
-                    <h3>Abu ZoomSafari 656m</h3>
-                    <p>バス用 ベイトの4ピース</p>
-                </div>
-
+            <section class="card-list" id="card-list">
+                <p>読み込み中...</p>
             </section>
 
             <section class="recommend-section">
@@ -71,5 +47,31 @@
             <p>&copy; 2025 ぱっくロッドLog</p>
         </footer>
 
+        <script>
+        fetch("reviews/data/list.json")
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById("card-list");
+                container.innerHTML = "";
+                data
+                    .filter(item => item.type === "rod")
+                    .forEach(item => {
+                        const div = document.createElement("div");
+                        div.className = "card";
+                        div.innerHTML = `
+                            <a href="reviews/${item.filename}">
+                                <img src="images/thumbnails/${item.filename.replace('.html', '.jpg')}" alt="${item.title}の画像">
+                            </a>
+                            <h3>${item.title}</h3>
+                            <p>パックロッドレビュー</p>
+                        `;
+                        container.appendChild(div);
+                    });
+            })
+            .catch(err => {
+                console.error("読み込みエラー:", err);
+                document.getElementById("card-list").innerText = "レビューが読み込めませんでした。";
+            });
+        </script>
     </body>
 </html>
